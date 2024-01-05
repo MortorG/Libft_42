@@ -6,7 +6,7 @@
 /*   By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 11:15:25 by hufuster          #+#    #+#             */
-/*   Updated: 2024/01/05 12:42:07 by hufuster         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:22:10 by hufuster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_isspace(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 void	*ft_memset(void *dst, int val, size_t len);
 void	ft_bzero(void *dst, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -42,3 +42,4 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
