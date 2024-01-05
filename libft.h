@@ -6,13 +6,11 @@
 /*   By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 11:15:25 by hufuster          #+#    #+#             */
-/*   Updated: 2024/01/05 11:44:01 by hufuster         ###   ########.fr       */
+/*   Updated: 2024/01/05 12:42:07 by hufuster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
-#define ABS(n) ((n<0?)(-n):(n))
 
 #include <stdlib.h>
 #include <unistd.h>
@@ -27,7 +25,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_strlen(const char *str);
 void	*ft_memset(void *dst, int val, size_t len);
-void	*ft_bzero(void *dst, size_t len);
+void	ft_bzero(void *dst, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 char	*ft_strcpy(char *dst, const char *src);
