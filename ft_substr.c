@@ -6,7 +6,7 @@
 /*   By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 13:31:53 by hufuster          #+#    #+#             */
-/*   Updated: 2024/01/05 15:42:47 by hufuster         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:47:52 by hufuster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 //		NULL if the allocation fails
 
 //	EXPLANATION
-//	First it checks if the start is outside and returns an empty string if it is
+//	First it checks if the start is outside the string and returns an empty
+//	string if it is
 //	
 //	After it checks if the string is smaller than the len after start, so it can
 //	allocate less memory in those cases
