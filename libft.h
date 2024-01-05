@@ -6,11 +6,13 @@
 /*   By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 11:15:25 by hufuster          #+#    #+#             */
-/*   Updated: 2024/01/05 11:15:23 by hufuster         ###   ########.fr       */
+/*   Updated: 2024/01/05 11:44:01 by hufuster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+#define ABS(n) ((n<0?)(-n):(n))
 
 #include <stdlib.h>
 #include <unistd.h>
