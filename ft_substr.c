@@ -6,7 +6,7 @@
 /*   By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 13:31:53 by hufuster          #+#    #+#             */
-/*   Updated: 2024/01/05 15:47:52 by hufuster         ###   ########.fr       */
+/*   Updated: 2024/01/09 15:52:11 by hufuster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > s_len)
 	{
 		substr = (char *)malloc(sizeof(char));
+		if (!substr)
+			return (substr);
 		*substr = '\0';
 		return (substr);
 	}
 	if (s_len - start < len)
 		len = s_len - start;
-	substr = (char *)malloc((len + 1) * sizeof(char));
+	substr = (char *)ft_calloc(len + 1, sizeof(char));
 	if (substr == NULL)
 		return (NULL);
 	i = 0;
@@ -55,6 +57,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		substr[i] = s[i + start];
 		i++;
 	}
-	substr[i] = '\0';
 	return (substr);
 }
