@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 15:20:19 by hufuster          #+#    #+#             */
-/*   Updated: 2024/01/09 15:27:50 by hufuster         ###   ########.fr       */
+/*   Created: 2024/01/09 15:28:27 by hufuster          #+#    #+#             */
+/*   Updated: 2024/01/09 15:29:08 by hufuster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-// Description 
-// Outputs the character ’c’ to the given file descriptor
-
-// Parameters 
-// c: The character to output.
-// fd: The file descriptor on which to write.
-
-void	ft_putchar_fd(char c, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, &c, 1);
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
