@@ -6,7 +6,7 @@
 #    By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 11:56:14 by hufuster          #+#    #+#              #
-#    Updated: 2024/01/09 15:30:18 by hufuster         ###   ########.fr        #
+#    Updated: 2024/01/09 17:05:14 by hufuster         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,11 @@ ft_strrchr.c ft_tolower.c ft_toupper.c ft_substr.c ft_strjoin.c ft_strtrim.c \
 ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
 ft_putendl_fd.c ft_putnbr_fd.c
 
+BONUSSRC=ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
+BONUSOBJ=$(BONUSSRC:.c=.o)
+
 OBJ=$(SRC:.c=.o)
 
 $(NAME): $(OBJ)
@@ -34,6 +39,9 @@ $(NAME): $(OBJ)
 	ranlib $(NAME)
 
 all: $(NAME)
+
+bonus: $(NAME) $(BONUSOBJ)
+	ar rc $(NAME) $(BONUSOBJ)
 
 clean: 
 	$(RM) $(OBJ)

@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 15:30:22 by hufuster          #+#    #+#             */
-/*   Updated: 2024/01/09 16:17:43 by hufuster         ###   ########.fr       */
+/*   Created: 2024/01/09 16:40:12 by hufuster          #+#    #+#             */
+/*   Updated: 2024/01/09 16:45:15 by hufuster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+// Parameters 
+// lst: The address of a pointer to the first link of a list.
+// new: The address of a pointer to the node to be added to the list.
+
+// Description 
+// Adds the node ’new’ at the end of the list
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else if (n < 0)
+	t_list	*temp;
+
+	if (lst)
 	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
-	}
-	else if (n < 10)
-		ft_putchar_fd(n + '0', fd);
-	else
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		if (*lst == NULL)
+			*lst = new;
+		else
+		{
+			temp = ft_lstlast(*lst);
+			temp->next = new;
+		}
 	}
 }

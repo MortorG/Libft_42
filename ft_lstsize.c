@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 15:30:22 by hufuster          #+#    #+#             */
-/*   Updated: 2024/01/09 16:17:43 by hufuster         ###   ########.fr       */
+/*   Created: 2024/01/09 16:21:41 by hufuster          #+#    #+#             */
+/*   Updated: 2024/01/09 16:34:27 by hufuster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+// Description 
+// Counts the number of nodes in a list.
+
+// Parameters 
+// lst: The beginning of the list.
+
+int	ft_lstsize(t_list *lst)
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else if (n < 0)
+	size_t	i;
+	t_list	*l;
+
+	i = 0;
+	l = lst;
+	if (lst)
 	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
+		i = 1;
+		while (l->next != NULL)
+		{
+			i++;
+			l = l->next;
+		}
 	}
-	else if (n < 10)
-		ft_putchar_fd(n + '0', fd);
-	else
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
+	return (i);
 }
