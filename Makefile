@@ -6,7 +6,7 @@
 #    By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 11:24:02 by hufuster          #+#    #+#              #
-#    Updated: 2024/01/10 11:37:36 by hufuster         ###   ########.fr        #
+#    Updated: 2024/01/10 11:38:43 by hufuster         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM=rm -f
 
 AR=ar rcs
 
-SRC=ft_atoi.c ft_bzero.c ft_callloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
+SRC=ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_islower.c ft_isprint.c ft_isspace.c ft_isupper.c ft_memchr.c \
 ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strcpy.c \
 ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
