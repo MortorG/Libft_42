@@ -6,7 +6,7 @@
 /*   By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 13:31:53 by hufuster          #+#    #+#             */
-/*   Updated: 2024/01/09 15:52:11 by hufuster         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:10:16 by hufuster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,20 @@
 //
 //	Then it allocates the necessary memory
 //
-//	Finally it copies the substring and adds the null character before returning
+//	Finally it copies the substring
 //
 #include "libft.h"
+
+static char	*ft_empty_string(void)
+{
+	char	*str;
+
+	str = (char *)malloc(sizeof(char));
+	if (!str)
+		return (str);
+	*str = '\0';
+	return (str);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -39,16 +50,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	s_len = ft_strlen(s);
 	if (start > s_len)
-	{
-		substr = (char *)malloc(sizeof(char));
-		if (!substr)
-			return (substr);
-		*substr = '\0';
-		return (substr);
-	}
+		return (ft_empty_string());
 	if (s_len - start < len)
 		len = s_len - start;
-	substr = (char *)ft_calloc(len + 1, sizeof(char));
+	substr = (char *)malloc((len + 1) * sizeof(char));
 	if (substr == NULL)
 		return (NULL);
 	i = 0;
@@ -57,5 +62,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		substr[i] = s[i + start];
 		i++;
 	}
+	substr[i] = '\0';
 	return (substr);
 }

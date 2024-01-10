@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/05 11:56:14 by hufuster          #+#    #+#              #
-#    Updated: 2024/01/09 17:05:14 by hufuster         ###   ########.fr        #
+#    Created: 2024/01/10 11:24:02 by hufuster          #+#    #+#              #
+#    Updated: 2024/01/10 11:24:03 by hufuster         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ bonus: $(NAME) $(BONUSOBJ)
 	ar rc $(NAME) $(BONUSOBJ)
 
 clean: 
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUSOBJ)
 
 fclean: clean
 	$(RM) $(NAME)

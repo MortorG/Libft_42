@@ -6,7 +6,7 @@
 /*   By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:47:53 by hufuster          #+#    #+#             */
-/*   Updated: 2024/01/09 14:32:28 by hufuster         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:03:03 by hufuster         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // Return value The string representing the integer.
 // NULL if the allocation fails.
 
-static int	ft_findnumlen(int n)
+static int	ft_find_num_len(int n)
 {
 	size_t	i;
 
@@ -34,7 +34,7 @@ static int	ft_findnumlen(int n)
 	return (i);
 }
 
-static char	*ft_allocnum(int n, int len)
+static char	*ft_alloc_num(int n, int len)
 {
 	char	*str;
 
@@ -45,7 +45,7 @@ static char	*ft_allocnum(int n, int len)
 	return (str);
 }
 
-static char	*ft_handleminint(void)
+static char	*ft_handle_min_int(void)
 {
 	char	*str;
 
@@ -74,9 +74,9 @@ char	*ft_itoa(int n)
 	int		end;
 
 	if (n == -2147483648)
-		return (ft_handleminint());
-	len = ft_findnumlen(n);
-	str = ft_allocnum(n, len);
+		return (ft_handle_min_int());
+	len = ft_find_num_len(n);
+	str = ft_alloc_num(n, len);
 	if (!str)
 		return (str);
 	end = 0;
