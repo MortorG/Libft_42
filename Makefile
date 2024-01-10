@@ -6,7 +6,7 @@
 #    By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 11:24:02 by hufuster          #+#    #+#              #
-#    Updated: 2024/01/10 11:24:03 by hufuster         ###   ########.fr        #
+#    Updated: 2024/01/10 11:37:36 by hufuster         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ CC=gcc
 CFLAGS=-Wall -Wextra -Werror
 
 RM=rm -f
+
+AR=ar rcs
 
 SRC=ft_atoi.c ft_bzero.c ft_callloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_islower.c ft_isprint.c ft_isspace.c ft_isupper.c ft_memchr.c \
@@ -35,13 +37,12 @@ OBJ=$(SRC:.c=.o)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $(SRC)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	$(AR) $(NAME) $(OBJ)
 
 all: $(NAME)
 
 bonus: $(NAME) $(BONUSOBJ)
-	ar rc $(NAME) $(BONUSOBJ)
+	$(AR) $(NAME) $(BONUSOBJ)
 
 clean: 
 	$(RM) $(OBJ) $(BONUSOBJ)
