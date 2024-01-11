@@ -6,7 +6,7 @@
 #    By: hufuster <hufuster@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 11:24:02 by hufuster          #+#    #+#              #
-#    Updated: 2024/01/11 16:59:10 by hufuster         ###   ########.fr        #
+#    Updated: 2024/01/11 17:08:40 by hufuster         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,6 @@ CFLAGS=-Wall -Wextra -Werror
 
 RM=rm -f
 AR=ar rcs
-
-HEADER=libft.h
-MAKE=Makefile
 
 SRC=ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_islower.c ft_isprint.c ft_isspace.c ft_isupper.c ft_memchr.c \
